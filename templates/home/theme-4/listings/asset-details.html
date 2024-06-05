@@ -1699,7 +1699,7 @@
                                     {% if assets.property_doc %}
                                     {% for doc in assets.property_doc %}
                                     <li>
-                                      <span class="pdf-icon"><img src="{% static 'theme-4/images/pdf.png' %}" alt="real estate sales"></span><a href="" download>{{ doc.original_doc_name }}{% if doc.original_doc_name|length > 15 %}...{% endif %}</a>
+                                      <span class="pdf-icon" role="presentation"><img src="{% static 'theme-4/images/pdf.png' %}" alt="real estate sales"></span><a href="javascript:void(0)" download>{{ doc.original_doc_name }}{% if doc.original_doc_name|length > 15 %}...{% endif %}</a>
                                     </li>
                                     {% endfor %}
                                     {% else %}

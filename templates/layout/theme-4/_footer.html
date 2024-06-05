@@ -118,7 +118,7 @@
           </div><!-- End .block -->
           <div class="block">
             <p>
-              <img src="{% if site_detail.website_logo.image_name %}{{ aws_url}}{{ site_detail.website_logo.bucket_name }}/{{ site_detail.website_logo.image_name }}{% else %}{% static 'theme-4/images/default_img.svg' %}{% endif %}" alt="real estate sales">
+              <img role="img" area-label="logo" src="{% if site_detail.website_logo.image_name %}{{ aws_url}}{{ site_detail.website_logo.bucket_name }}/{{ site_detail.website_logo.image_name }}{% else %}{% static 'theme-4/images/default_img.svg' %}{% endif %}" alt="real estate sales">
             </p>
             <div class="copyright">
               © Copyright {% now "Y" %} All rights reserved.

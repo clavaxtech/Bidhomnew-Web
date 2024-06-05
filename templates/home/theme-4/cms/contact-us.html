@@ -61,14 +61,14 @@
                       </div>
                       <div class="col-md-6">
                         <div class="form-group focused">
-                          <label for="phone_no">Phone</label>
+                          <label for="Phone">Phone</label>
                           <input type="text" class="form-control" id="phone_no" name="phone_no" onmouseover="return add_focus(this);" placeholder="" data-inputmask="'mask': '(999) 999-9999'" data-inputmask-clearincomplete="true" aria-required="true" role="textbox" aria-label="Phone">
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group focused">
                           <label for="phone_no">Select Type</label>
-                          <select name="user_type" id="user_type" class="select form-control">
+                          <select aria-label="Select Type" name="user_type" id="user_type" class="select form-control">
                             <option value="Seller">Seller</option>
                             <option value="Buyer">Buyer</option>
                             <option value="Agent">Agent</option>
@@ -133,15 +133,15 @@
                         <li class="{{social.name}}">
                           <a href="{{social.url}}" role="button" tabindex="1">
                             {% if social.account_type == 1 %}
-                              <i class="fab fa-facebook-f" role="presentation"></i>
+                              <i class="fab fa-facebook-f" role="img" aria-label="facebook"></i>
                             {% elif social.account_type == 2 %}
-                              <i class="fab fa-twitter" role="presentation"></i>
+                              <i class="fab fa-twitter" role="img" aria-label="twitter"></i>
                             {% elif social.account_type == 3 %}
-                              <i class="fab fa-youtube" role="presentation"></i>
+                              <i class="fab fa-youtube" role="img" aria-label="youtube"></i>
                             {% elif social.account_type == 4 %}
-                              <i class="fab fa-linkedin-in" role="presentation"></i>
+                              <i class="fab fa-linkedin-in" role="img" aria-label="linkedin"></i>
                             {% elif social.account_type == 5 %}
-                              <i class="fab fa-instagram" role="presentation"></i>
+                              <i class="fab fa-instagram" role="img" aria-label="instagram"></i>
                             {% endif %}
                           </a>
                         </li>
@@ -560,7 +560,7 @@
     });
   }
 
-    $('.select').chosen();
+    // $('.select').chosen();
 
     /* map control button */
     function initZoomControl(map) {

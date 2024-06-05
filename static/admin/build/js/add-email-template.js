@@ -27,20 +27,22 @@ $(function() {
 
 
      //active inactive 
-     $(document).on('submit', '#addTemplate', function(event){
-        event.preventDefault();
-        $(".loaderDiv").show();
+    $(document).on('submit', '#addTemplate', function(event){
+        // event.preventDefault();
+        // $(".loaderDiv").show();
+        $('.overlay').show();
         $.ajax({
             type: $(this).attr('method'),
             url: $(this).attr('action'),
             data: $(this).serialize(),
             success: function (data) {
-                // change html buttons
-                showAlert(data.msg, data.error)
+                $('.overlay').hide();
+                $.growl.notice({title: "Email Template ", message: data.msg, size: 'large'});
                 if(data.error == 0){
-                    window.location.href = "/admin/email-template-list/"
+                    setTimeout(function(){
+                        window.location.href = "/admin/email-template-list/";        
+                    }, 2000);
                 }
-                $(".loaderDiv").hide();
 
             },
             error: function(jqXHR, exception) {
@@ -60,8 +62,9 @@ $(function() {
                 } else {
                     msg = 'Uncaught Error.\n' + jqXHR.responseText;
                 }
-                showAlert(msg, 1)
-                $(".loaderDiv").hide();
+                // showAlert(msg, 1)
+                $('.overlay').hide();
+                $.growl.error({title: "Email Template ", message: msg, size: 'large'});
 
             }
         });

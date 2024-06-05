@@ -11,7 +11,7 @@
       {% for cat in blog_category %}
       {{ absolute}}
       <li>
-        <a href="javascript:void(0)" onclick="blogListingSearch(1,{{ cat.id }})">{{ cat.name }}</a>
+        <a href="javascript:void(0)" role="button" tabindex="4" onclick="blogListingSearch(1,{{ cat.id }})">{{ cat.name }}</a>
       </li>
       {% endfor %}
       {% endif %}
@@ -35,7 +35,7 @@
         </div>
         <div class="block">
           <h6>
-            <a role="button" href="/blog-details/?id={{ recent_post.id }}">{{ recent_post.title|default:'' }} </a>
+            <a role="button" tabindex="5" href="/blog-details/?id={{ recent_post.id }}">{{ recent_post.title|default:'' }} </a>
           </h6>
         </div>
       </div>

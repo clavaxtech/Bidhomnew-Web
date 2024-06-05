@@ -29,8 +29,11 @@ header h1:before,
 
 .nav-button,
 .nav-close {
-	position: fixed;
-	top: 18px;
+	// position: fixed;
+	position: absolute;
+	// top: 18px;
+	top: 50%;
+	transform: translateY(-50%);
 	width: 30px;
 	height: 30px;
 	overflow: hidden;
@@ -38,10 +41,11 @@ header h1:before,
 	cursor: pointer;
 	text-decoration: none;
 	line-height: 30px;
-	color: $white;
-	@include breakpoint(xs) {
-		top: 10px;
-	}
+	color: $gray;
+	
+	// @include breakpoint(sm) {
+	// 	top: 6px;
+	// }
 }
 
 .nav-button:before,
@@ -76,7 +80,7 @@ header h1:before,
 	color: $white;
 
 	@include breakpoint(lg) {
-		line-height: 3.4rem;
+		line-height: 2rem;
 	}
 	@include breakpoint(xs) {
 		margin-top: 48px;
@@ -109,7 +113,7 @@ header h1:before,
 }
 .nav li:hover > a,
 .nav li.nav-active > a {
-	color: $white;
+	color: $secondary;
 }
 
 .nav .nav-submenu > ul {
@@ -120,29 +124,28 @@ header h1:before,
 .nav a:hover,
 .nav a:active,
 .nav a:visited {
-	padding: 0 15px 1px;
-	font-size: 16px;
-	color: $white;
-	background: #0079d0;
+	padding: 10px 15px;
+	font-size: $fontLarge;
+	color: $gray;
 	text-decoration: none;
 	display: block;
 	position: relative;
-	@include border-radius (8px);
 
 	@include breakpoint(laptop) {
-		padding: 0 15px 1px;
+		padding: 10px 12px;
 	}
 
 	@include breakpoint(lg) {
-		padding: 0 12px 1px;
+		padding: 10px;
 		font-size: $fontMiddle;
 	}
 	@include breakpoint(md) {
-		padding: 0 10px 1px;
+		padding: 10px 8px;
+		font-size: $fontSmall;
 	}
 }
 .nav a:hover {
-	color: $white;
+	color: $secondary;
 }
 
 .nav .nav-submenu > a:after {
@@ -152,7 +155,18 @@ header h1:before,
 	top: 1px;
 	content: "\E005";
 }
-
+@media only screen and (min-width: 1680px) {
+	.nav a,
+	.nav a:hover,
+	.nav a:active,
+	.nav a:visited {
+		padding: 10px 25px;
+		font-size: $fontExtraLarge;
+	}
+	.nav .nav-submenu > ul {
+		min-width: 260px !important;
+	}
+}
 @media only screen and (min-width: 960px) {
 
 	.nav-button {
@@ -172,27 +186,48 @@ header h1:before,
 	}
 
 	.nav .nav-submenu li {
-		border-bottom: 1px solid #414141;
-
+		border-bottom: 1px solid #e4e4e4;
 		&:last-child {
 			border-bottom: none;
 		}
 	}
 	.nav .nav-submenu li a {
-		color: $white;
-		@include border-radius (0);
+		color: $gray;
+		padding: 10px 15px;
+        line-height: 30px;
+		position: relative;
+
+		&:before {
+			content: "\f0da";
+			position: absolute;
+			left: 10px;
+			top: 8px;
+			width: 10px;
+			font-size: 12px;
+			opacity: 0;
+			transition: all 500ms ease;
+			font-family: "Font Awesome 6 Pro";
+			font-weight: 900;
+		}
 
 		&:hover {
-			background: $secondary;
-			color: $white;
+			color: $secondary;
+			padding-left: 30px;
+
+			&:before {
+				opacity: 1;
+			}
 		}
+		
 	}
 
 	.nav .nav-submenu > ul {
-		margin: 3px 0 0 0;
-		min-width: 160px;
+		margin: 0;
+		min-width: 220px;
 		padding: 0;
-		// background: $black;
+		background: $white;
+        border-top: 1px solid #e4e4e4;
+        border-radius: 0 0 10px 10px;
 	}
 
 	.nav > ul > .nav-submenu > a:after {
@@ -242,56 +277,60 @@ header h1:before,
 
 @media only screen and (min-width: 960px) {
 
-.nav {
-	display: block;
-	position: relative;
-	bottom: auto;
-	overflow: visible;
-}
+	.nav {
+		display: block;
+		position: relative;
+		bottom: auto;
+		overflow: visible;
+	}
 
-.nav li {
-	position: relative;
-	white-space: nowrap;
-}
+	.nav li {
+		position: relative;
+		white-space: nowrap;
+	}
 
-.nav > ul > li {
-	display: inline-block;
-}
+	.nav > ul > li {
+		display: inline-block;
 
-.nav ul {
-	display: block;
-}
+		&.register-btn {
+			display: none;
+		}
+	}
 
-.nav ul ul {
-	display: none;
-	position: absolute;
-	top: 100%;
-	left: 0;
-	z-index: 901;
-}
+	.nav ul {
+		display: block;
+	}
 
-.nav ul ul ul {
-	top: 5px;
-	left: 95%;
-	z-index: 902;
-}
+	.nav ul ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 901;
+	}
 
-.nav ul ul ul ul {
-	z-index: 903;
-}
+	.nav ul ul ul {
+		top: 5px;
+		left: 95%;
+		z-index: 902;
+	}
 
-.nav ul ul ul ul ul {
-	z-index: 904;
-}
+	.nav ul ul ul ul {
+		z-index: 903;
+	}
 
-.nav ul ul li.nav-left > ul {
-	left: auto;
-	right: 95%;
-}
+	.nav ul ul ul ul ul {
+		z-index: 904;
+	}
 
-.nav-no-js .nav li:hover > ul {
-	display: block;
-}
+	.nav ul ul li.nav-left > ul {
+		left: auto;
+		right: 95%;
+	}
+
+	.nav-no-js .nav li:hover > ul {
+		display: block;
+	}
 
 }
 
@@ -305,8 +344,18 @@ header h1:before,
 	}
 
 	.nav ul {
-		background: $black;
+		background: $white;
 	}
 
 }
 
+@include breakpoint(lg) {
+
+    .nav .nav-submenu > ul {
+		min-width: 200px;
+	}
+	.nav .nav-submenu li a {
+		padding: 8px 15px;
+        line-height: 22px;
+	}
+}

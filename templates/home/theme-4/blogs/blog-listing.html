@@ -4,7 +4,7 @@
 <li>
   <div class="item">
     <figure>
-      <a href="/blog-details/?id={{ blog.id }}">
+      <a href="/blog-details/?id={{ blog.id }}" role="button">
         <div class="image">
           <img src="{% static 'theme-4/images/no-blog-full.png' %}" alt="real estate sales">
           <img class="article-pic" src="{% if blog.article_image.image_name %}{{ aws_url }}{{ blog.article_image.bucket_name }}/{{ blog.article_image.image_name }}{% else %}{% static 'theme-4/images/no-blog-full.png' %}{% endif %}" alt="{{ blog.article_image.image_name|default:'' }}">
@@ -16,7 +16,7 @@
     </figure>
     <figcaption>
       <h4>
-        <a href="/blog-details/?id={{ blog.id }}">
+        <a href="/blog-details/?id={{ blog.id }}" role="button">
           {{ blog.title|default:'' }}
         </a>
       </h4>
@@ -34,7 +34,7 @@
             {{ blog.publish_date|default:'' }}
           </li>
           <li>
-            <a href="#"><span class="share-icon"></span> Share</a>
+            <a href="javascript:void(0)" role="button"><span class="share-icon"></span> Share</a>
           </li>
         </ul>
       </div>
@@ -50,5 +50,5 @@
 </li>
 {% endfor %}
 {% else %}
-<li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+<li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" role="img" alt="real estate sales" /></li>
 {% endif %}

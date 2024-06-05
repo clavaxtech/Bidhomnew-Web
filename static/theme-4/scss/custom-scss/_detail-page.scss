@@ -902,7 +902,8 @@
     border-bottom: 1px solid #e5e5e5;
     padding-bottom: 20px;
     margin-bottom: 20px;
-
+    padding-top: 10px;
+    
     .item {
         display: flex;
         flex-wrap: wrap;
@@ -1612,6 +1613,7 @@
 
     .listed-agent {
         display: flex;
+        justify-content: space-between;
         flex-wrap: wrap;
 
         .item {
@@ -1663,7 +1665,7 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
-                width: 140px;
+                width: 145px;
 
                 @include breakpoint(lg) {
                     width: auto;

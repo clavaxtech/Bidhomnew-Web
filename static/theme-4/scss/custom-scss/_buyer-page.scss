@@ -99,7 +99,7 @@
 
 .multiinvest-wrap {
     padding: 5% 0;
-    background-color: #f2f2f2;
+    background-color: #f4f4f4;
 
     h2 {
         font-weight: $bold;
@@ -147,10 +147,9 @@
                         padding: 0;
 
                         li {
-                            padding: 5px 10px;
+                            padding: 0px 10px;
                             color: #0070c7;
-                            background-color: $white;
-                            border-right: 1px solid $black;
+                            border-right: 1px solid #8F8F8F;
 
                             @include breakpoint(xs) {
                                 padding: 0 5px;
@@ -179,7 +178,7 @@
                 }
             }
 
-            figure {
+            .pic {
                 position: relative;
                 z-index: 1;
 

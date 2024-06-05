@@ -40,9 +40,9 @@ const socket = io.connect(socket_domain, {
     rejectUnauthorized: false,
     requestCert: false,
 });
-console.log("-----------");
-console.log(socket_domain);
-console.log(socket);
+// console.log("-----------");
+// console.log(socket_domain);
+// console.log(socket);
 window.onbeforeunload = function(e){
     socket.emit("removePropertyWatcher", {"user_id":session_user_id, "property_id": property_id});
 };

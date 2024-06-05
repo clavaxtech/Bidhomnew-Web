@@ -9,7 +9,7 @@
 {% load humanize %}
   <div class="body-content listing-body">
 
-    <div class="search-wrap">
+    <div class="search-wrap" area-label="search banner" role="img">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-12">
@@ -17,13 +17,13 @@
               Bid or Sell a Wide Range of Properties
             </h1>
             <div class="search-block">
-              <div class="input-group">
+              <form class="input-group" role="form">
                 <input type="text" class="form-control sugesstion_input" name="property_map_search_text" id="property_map_search_text" placeholder="Search City, State, Zip, Address, MLS ID" aria-label="Address" role="textbox">
                 <input type="hidden" name="agent_id" id="agent_id">
-                <button role="button" id="searchPropertyMapBtn" class="btn btn-secondary" tabindex="12" onclick="getresultmap('our_listing',1,'','','','');"><i class="fas fa-search" role="presentation"></i> Search</button>
-              </div>
+                <button role="button" id="searchPropertyMapBtn" class="btn btn-secondary" tabindex="12" onclick="getresultmap('our_listing',1,'','','','');"><i class="fas fa-search" role="img"></i> Search</button>
+              </form>
             </div>
-            <a role="button" href="javascript:void(0)" class="btn btn-secondary burger" aria-label="Filter" tabindex="1">More Filters <i class="fa-solid fa-filter" role="presentation"></i></a>
+            <a role="button" href="javascript:void(0)" class="btn btn-secondary burger" aria-label="Filter" tabindex="1">More Filters <i class="fa-solid fa-filter" role="img"></i></a>
           </div><!-- End .col-md-12 -->
         </div><!-- End .row -->
       </div><!-- End .container -->
@@ -99,10 +99,10 @@
             </div>
             <ul class="map-tabs" id="property-tab">
               <li>
-                <a role="button" href="/our-listing/" tabindex="8"><i class="fas fa-list" role="presentation"></i> <span>List</span></a>
+                <a role="button" href="/our-listing/" tabindex="8"><i class="fas fa-list" role="img"></i>List</a>
               </li>
               <li class="active">
-                <a role="button" href="javascript:void(0);" tabindex="9"><i class="fas fa-map-marker-alt" role="presentation"></i> <span>Map</span></a>
+                <a role="button" href="javascript:void(0);" tabindex="9"><i class="fas fa-map-marker-alt" role="img"></i> Map</a>
               </li>
             </ul>
           </div><!-- End .filter-data -->
@@ -355,7 +355,8 @@
                     </li>
                     {% endfor %}
                     {% else %}
-                    <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                    <li class="text-center text-danger" style="width:100%;">
+                      <img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="No Data Found" role="img" /></li>
                     {% endif %}
                   </ul>
                 </div><!-- End .listing-content -->
@@ -545,7 +546,8 @@
                     </li>
                     {% endfor %}
                     {% else %}
-                    <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                    <li class="text-center text-danger" style="width:100%;">
+                      <img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="No Data Found" role="img" /></li>
                     {% endif %}
                         </ul>
                 </div><!-- End .listing-content -->
@@ -735,7 +737,8 @@
                     </li>
                     {% endfor %}
                     {% else %}
-                    <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                    <li class="text-center text-danger" style="width:100%;">
+                      <img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="No Data Found" role="img" /></li>
                     {% endif %}
                   </ul>
                 </div><!-- End .listing-content -->
@@ -918,7 +921,8 @@
                     </li>
                     {% endfor %}
                     {% else %}
-                    <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                    <li class="text-center text-danger" style="width:100%;">
+                      <img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="No Data Found" role="img" /></li>
                     {% endif %}
                   </ul>
                 </div><!-- End .listing-content -->
@@ -1108,7 +1112,8 @@
                     </li>
                     {% endfor %}
                     {% else %}
-                    <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                    <li class="text-center text-danger" style="width:100%;">
+                      <img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="No Data Found" role="img" /></li>
                     {% endif %}
                   </ul>
                 </div><!-- End .listing-content -->
@@ -1299,7 +1304,8 @@
                     </li>
                     {% endfor %}
                     {% else %}
-                    <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                    <li class="text-center text-danger" style="width:100%;">
+                      <img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="No Data Found" role="img" /></li>
                     {% endif %}
                   </ul>
                 </div><!-- End .listing-content -->
@@ -1310,7 +1316,7 @@
                 <ul>
                   <li class="page-item">Result Per Page:</li>
                   <li class="page-item">
-                    <select name="map_pagi" class="form-control" id="map_pagi" onchange="getresultmap('our_listing',1,'','','','');">
+                    <select name="map_pagi" aria-label="Result" class="form-control" id="map_pagi" onchange="getresultmap('our_listing',1,'','','','');">
                       <option value="10">10</option>
                       <option value="20">20</option>
                       <option value="30">30</option>
@@ -1491,8 +1497,8 @@
   var is_first_login = {{request.session.is_first_login}};
   var user_id = {{ request.session.user_id }};
   $(document).ready(function() {
-    $('#map_pagi').chosen();
-    $('#map_datesort').chosen();
+    // $('#map_pagi').chosen();
+    // $('#map_datesort').chosen();
     $(document).on('keyup', '#property_map_search_text', function(e){
           var x = document.getElementById(this.id + "autocomplete-list");
           if (x) x = x.getElementsByTagName("div");

@@ -38,7 +38,7 @@ function getresult(currpage, search, sort_key, sort_val){
                 var $perpageresult = getAllPageLinks(currpage, recordPerpage, response.total, '', '', '');
                 var $pre = '<li class="page-item">Result Per Page:</li><li class="page-item"><select name="" id="pagi"><option value="">10</option><option value="">20</option></select></li>';
                 $("#prop_listing_pagination_list").html($perpageresult);
-                $('#pagi').chosen();
+                // $('#pagi').chosen();
             }
         }
     });

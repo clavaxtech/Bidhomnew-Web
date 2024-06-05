@@ -7,8 +7,8 @@
                           <li>
                           <div class="item">
                               <figure>
-                                <img src="{% static 'theme-4/images/transparent.png' %}" alt="real estate sales">
-                                <img class="article-pic" src="{% if agent.image.doc_file_name %}{{ aws_url }}{{ agent.image.bucket_name }}/{{ agent.image.doc_file_name }}{% else %}{% static 'theme-4/images/no_photo.png' %}{% endif %}" alt="real estate sales">
+                                <img src="{% static 'theme-4/images/transparent.png' %}" alt="real estate sales" area-label="transparent">
+                                <img class="article-pic" src="{% if agent.image.doc_file_name %}{{ aws_url }}{{ agent.image.bucket_name }}/{{ agent.image.doc_file_name }}{% else %}{% static 'theme-4/images/no_photo.png' %}{% endif %}" area-label="real estate sales" alt="real estate sales">
                               </figure>
                               <figcaption>
                               <h6>
@@ -43,10 +43,10 @@
                               </ul>
                               <div class="buttons">
                                   <div class="chat-btn">
-                                  <a href="{% if sess_user_id %}javascript:void(0);{% else %}{% url 'login' %}?next=/our-agents/{% endif %}" {% if sess_user_id %}onclick="chattoagent({{ agent.user_id|default:'' }}, {{ sess_user_id|default:'' }});"{% endif %} class="btn btn-secondary btn-sm chattoagent" data-agent_id="{{ agent.user_id|default:'' }}">Chat</a>
+                                    <a href="{% if sess_user_id %}javascript:void(0);{% else %}{% url 'login' %}?next=/our-agents/{% endif %}" {% if sess_user_id %}onclick="chattoagent({{ agent.user_id|default:'' }}, {{ sess_user_id|default:'' }});"{% endif %} class="btn btn-secondary btn-sm chattoagent" data-agent_id="{{ agent.user_id|default:'' }}">Chat</a>
                                   </div>
                                   <div class="list-btn">
-                                   <a href="{% if agent.property_count != 0 %}/our-listing/?agent_id={{agent.user_id|default:''}}{% else %}javascript:void(0){% endif %}" class="btn btn-primary btn-sm"><span>{{ agent.property_count|default:'0' }}</span> View My Listings </a>
+                                    <a href="{% if agent.property_count != 0 %}/our-listing/?agent_id={{agent.user_id|default:''}}{% else %}javascript:void(0){% endif %}" class="btn btn-primary btn-sm"><span>{{ agent.property_count|default:'0' }}</span> View My Listings </a>
                                   </div>
                               </div><!-- End .buttons -->
                               </figcaption>
@@ -54,7 +54,7 @@
                           </li>
                       {% endfor %}    
                   {% else %}
-                  <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                  <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" role="img" alt="real estate sales" /></li>
                   {% endif %}
 
                   

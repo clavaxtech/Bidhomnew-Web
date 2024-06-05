@@ -119,7 +119,8 @@
                           <a role="button" href="/admin/payment-settings/" tabindex="18"><span class="icon payment-icon" role="presentation"></span> Payment Settings</a>
                         </li>
                         {% endif %}
-                        {% comment %} <li>
+                        {% comment %} 
+                        <li>
                           <a role="button" href="/my-bids/" tabindex="19"><span class="icon bid-icon" role="presentation"></span> My Bids</a>
                         </li>
                         <li>
@@ -139,13 +140,10 @@
                   </li>
                   {% else %}
                   <li class="register-btn">
-                    
-                    <a role="button" href="{% url 'register' %}" tabindex="8"><i class="fa-regular fa-user" role="presentation"></i> Create Free Account</a>
+                    <a role="button" href="{% url 'register' %}" class="btn btn-primary btn-sm" tabindex="8"><i class="fa-regular fa-user" role="presentation"></i> Create Free Account</a>
                   </li>
                   <li>
-                    
-
-                    <a role="button" href="{% url 'login' %}?next={{ request.get_full_path }}" tabindex="9"><i class="fa-sharp fa-regular fa-arrow-right-to-arc" role="presentation"></i> Login</a>
+                    <a role="button" href="{% url 'login' %}?next={{ request.get_full_path }}" class="btn btn-secondary btn-sm" tabindex="9"><i class="fa-sharp fa-regular fa-arrow-right-to-arc" role="presentation"></i> Login</a>
                   </li>
                   
                   {% endif %}

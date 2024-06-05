@@ -43,7 +43,7 @@
                     
                       <div class="item">
                         <figure>
-                          <a href="/blog-details/?id={{ blog.id }}">
+                          <a href="/blog-details/?id={{ blog.id }}" role="button">
                             <div class="image">
                               <img src="{% static 'theme-4/images/no-blog-full.png' %}" alt="real estate sales">
                               <img class="article-pic" src="{% if blog.article_image.image_name %}{{ aws_url }}{{ blog.article_image.bucket_name }}/{{ blog.article_image.image_name }}{% else %}{% static 'theme-4/images/no-blog-full.png' %}{% endif %}" alt="{{ blog.article_image.image_name|default:'' }}">
@@ -55,7 +55,7 @@
                         </figure>
                         <figcaption>
                           <h4>
-                            <a href="/blog-details/?id={{ blog.id }}">
+                            <a href="/blog-details/?id={{ blog.id }}" role="button">
                               {{ blog.title|default:'' }}
                             </a>
                           </h4>
@@ -73,7 +73,7 @@
                                 {{ blog.publish_date|default:'' }}
                               </li>
                               <li>
-                                <a href="#"><span class="share-icon"></span> Share</a>
+                                <a href="javascript:void(0)" role="button"><span class="share-icon"></span> Share</a>
                               </li>
                             </ul>
                           </div>
@@ -87,7 +87,7 @@
                   </li>
                   {% endfor %}
                   {% else %}
-                  <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" alt="real estate sales" /></li>
+                  <li class="text-center text-danger" style="width:100%;"><img src="{% static 'admin/images/no-data-image.png' %}" class=" center mb0" role="img" alt="real estate sales" /></li>
                   {% endif %}
                 </ul>
                 <div class="pagination-wrap">
@@ -95,7 +95,7 @@
                 <ul>
                   <li class="page-item">Result Per Page:</li>
                   <li class="page-item">
-                    <select class="select form-control" name="blog_num_record" id="blog_num_record" onchange="blogListingSearch(1,'');">
+                    <select class="select form-control" aria-label="Result" name="blog_num_record" id="blog_num_record" onchange="blogListingSearch(1,'');">
                       <!--<option value="2">2</option>-->
                       <option value="10">10</option>
                       <option value="20">20</option>
@@ -121,7 +121,7 @@
                       <h4>
                         Listings
                       </h4>
-                      <a role="button" href="/our-listing" class="btn btn-secondary">Search</a>
+                      <a role="button" tabindex="4" href="/our-listing" class="btn btn-secondary">Search</a>
                     </div>
                   </li>
                   <li>
@@ -132,7 +132,7 @@
                       <h4>
                         Value Estimator
                       </h4>
-                      <a role="button" href="/property-value-estimator/" class="btn btn-secondary">Get Started</a>
+                      <a role="button" tabindex="5" href="/property-value-estimator/" class="btn btn-secondary">Get Started</a>
                     </div>
                   </li>
                   <li>
@@ -143,7 +143,7 @@
                       <h4>
                         Types
                       </h4>
-                      <a role="button" href="/auction-type/" class="btn btn-secondary">Learn More</a>
+                      <a role="button" tabindex="6" href="/auction-type/" class="btn btn-secondary">Learn More</a>
                     </div>
                   </li>
                   <li>
@@ -154,7 +154,7 @@
                       <h4>
                         Listing Alerts
                       </h4>
-                      <a role="button" href="{% url 'register' %}" class="btn btn-secondary">Sign Up</a>
+                      <a role="button" tabindex="7" href="{% url 'register' %}" class="btn btn-secondary">Sign Up</a>
                     </div>
                   </li>
                 </ul>
@@ -185,9 +185,9 @@
 <script type="text/javascript" src="{% static 'theme-common/js/pagination.js' %}?v=1.1"></script>
 <script type="text/javascript" src="{% static 'theme-common/js/common.js' %}?v=1.1"></script>
 <script>
-$(document).ready(function(){
-  $('.select').chosen();
-});
+// $(document).ready(function(){
+//   $('.select').chosen();
+// });
 function blog_details(blog_id){
   window.location.href='/blog-details/?id='+blog_id;
 }

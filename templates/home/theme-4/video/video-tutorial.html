@@ -45,7 +45,7 @@
                   <ul>
                     <li class="page-item">Result Per Page:</li>
                     <li class="page-item">
-                      <select id="pagi" class="form-control" onchange="getresult(1,'','','');">
+                      <select id="pagi" aria-label="Result" class="form-control" onchange="getresult(1,'','','');">
                         <option value="12">12</option>
                         <option value="24">24</option>
                         <option value="36">36</option>
@@ -118,7 +118,7 @@
 
   <script>
     $(document).ready(function() {
-      $('#pagi, #datesort').chosen();      
+      // $('#pagi, #datesort').chosen();      
     });
     getresult(1, '', '', '','');
   </script>

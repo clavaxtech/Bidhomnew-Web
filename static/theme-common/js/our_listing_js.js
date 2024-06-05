@@ -206,8 +206,8 @@ function getresult(listing_type, currpage, search, sort_key, sort_val, filter_li
                             pre_active_listing = '#featured';
                         }
 
-                        $('#pagi').chosen();
-                        $("#datesort").chosen();
+                        // $('#pagi').chosen();
+                        // $("#datesort").chosen();
                         $(window).scrollTop(0);
                         /*if(response.total > 0){
                             var show_page_txt = 'Showing page '+response.page+' of '+response.total;
@@ -321,8 +321,8 @@ function getresult(listing_type, currpage, search, sort_key, sort_val, filter_li
                             pre_active_listing = '#featured';
                         }
 
-                        $('#pagi').chosen();
-                        $("#datesort").chosen();
+                        // $('#pagi').chosen();
+                        // $("#datesort").chosen();
                         $(window).scrollTop(0);
                         /*if(response.total > 0){
                             var show_page_txt = 'Showing page '+response.page+' of '+response.total;
@@ -411,7 +411,7 @@ function getresult(listing_type, currpage, search, sort_key, sort_val, filter_li
                         else if(response.listing_filter == 'featured'){
                             pre_map_active_listing = '#featured-map';
                         }
-                        $('#map_pagi').chosen();
+                        // $('#map_pagi').chosen();
                         $(window).scrollTop(0);
                     }
                 }
@@ -508,7 +508,7 @@ function getresult(listing_type, currpage, search, sort_key, sort_val, filter_li
                         else if(response.listing_filter == 'featured'){
                             pre_map_active_listing = '#featured-map';
                         }
-                        $('#map_pagi').chosen();
+                        // $('#map_pagi').chosen();
                         $(window).scrollTop(0);
                     }
                 }
@@ -625,7 +625,7 @@ function getPropertyType(){
                     option += "<option value='"+item.id+"'>"+item.property_type+"</option>";
                 });
                 $('#filter_property_type').append(option);
-                $('#filter_property_type').trigger("chosen:updated");
+                // $('#filter_property_type').trigger("chosen:updated");
             }
             $('.overlay').hide();
         }

@@ -86,7 +86,7 @@
     }
 
     .modal-footer {
-      padding: 10px 50px 30px;
+      padding: 10px 20px 30px;
       border: none;
 
       @media screen and (max-width: 1366px) {
@@ -104,12 +104,13 @@
         position: relative;
 
         .price-limit {
-          display: table;
+          display: flex;
+          align-items: center;
           position: relative;
         }
 
         .form-control {
-          padding-left: 10px;
+          margin-right: 10px;
           width: auto;
           border-bottom: none;
         }
@@ -120,12 +121,6 @@
           top: 14px;
           z-index: 1;
           color: $black;
-        }
-
-        a {
-          position: absolute;
-          right: -10px;
-          top: 16px;
         }
       }
     }

@@ -41,6 +41,32 @@
 
   </div><!-- end .banner-wrap -->
 
+  <div class="welcome-wrap">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1 col-md-12">
+          <h2 aria-level="2">
+            Welcome to <span>{{ dashboard_data.custom_site_settings.website_name|default:'Who We Are' }}</span>
+          </h2>
+          
+            <p>
+              {% if dashboard_data.custom_site_settings.about_description %}
+              {% autoescape off %}
+              {{ dashboard_data.custom_site_settings.about_description|striptags }}
+              {% endautoescape %}
+
+            {% else %}
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            {% endif %}
+            </p>
+            <div class="pt10">
+              <a role="button" href="/bid-online/" class="btn btn-primary" tabindex="11">View More</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- End .welcome-wrap -->
+
   <div class="real-wrap">
     <div class="container-fluid">
       <div class="row">
@@ -67,7 +93,7 @@
           {% endif %}
         </div>
 
-        <div class="col-md-12">
+        <div class="col-lg-12 col-md-12">
           <div class="real-slider">
             {% for auctions in auction_name %}
               <div class="item">
@@ -75,7 +101,7 @@
                   <div class="box">
                     <div class="icon-box">
                       <span>
-                        <img src="{% static auctions.img_path %}" alt="real estate sales">
+                        <img src="{% static auctions.img_path %}" role="img" alt="real estate sales">
                       </span>
                     </div>
                     <h3 aria-level="3">
@@ -93,172 +119,115 @@
     </div>
   </div><!-- End .real-wrap -->
 
-      <div class="whoweare-wrap">
+      
+
+      <div class="experties-wrap">
+
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-12">
-              <div class="inner-wrap">
-                <h2 aria-level="2">
-                  Welcome to <span>{{ dashboard_data.custom_site_settings.website_name|default:'Who We Are' }}</span>
-                </h2>
-                <div class="text">
-                  <p>
-                    {% if dashboard_data.custom_site_settings.about_description %}
-                    {% autoescape off %}
-                    {{ dashboard_data.custom_site_settings.about_description|striptags }}
-                    {% endautoescape %}
-  
-                  {% else %}
-                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                  {% endif %}
-                  </p>
-                  <div class="clearfix right">
-                    <a role="button" href="/bid-online/" class="btn btn-primary" tabindex="11">View More</a>
-                  </div>
-                </div>
-              </div>
-  
+            <div class="col-lg-8 col-md-10 col-sm-12 col-lg-offset-2  col-md-offset-1 center">
+              <h2 aria-level="2">
+                Our Expertise <span>Specializing In</span>
+              </h2>
+              <h5 aria-level="5">
+                {{ site_detail.website_name|default:'Gsa Group' }} is revolutionizing the way real estate is sold.
+              </h5>
+              <p>
+                We took the best features from real estate auctions and traditional real estate and created an innovative multi auction platform that works better than any other selling methods in any market condition
+              </p>
             </div>
           </div>
         </div>
-      </div><!-- End .whoweare-wrap -->
 
-      <div class="experties-wrap">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="item">
-                <div class="block">
-                  <a href="javascript:void(0)" role="button" tabindex="12">
+        <div class="experties-bg">
+          <div class="container-fluid">
+            
+              <ul>
+                {% comment %}
+                <li>
+                  <div class="bg">
                     <div class="pic">
-                      <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                      <img class="slide-img" src="{% static 'theme-4/images/exp-1.jpg' %}" alt="real estate sales">
+                      <img src="{% static 'theme-4/images/exp-2.jpg' %}" alt="real estate sales">
                     </div>
                     <div class="content">
-                      <h2 aria-level="2">
-                        OUR EXPERTISE
-                        <span>
-                          Specializing In
-                        </span>
-                      </h2>
-                      <h5 aria-level="5">
-                        {{ site_detail.website_name|default:'Gsa Group' }} is revolutionizing the way real estate is sold.
+                      <h5 aria-level="2">
+                        House
                       </h5>
                       <p>
-                        We took the best features from real estate auctions and traditional real estate and created an innovative multi auction platform that works better than any other selling methods in any market condition
+                        revolutionizing the way real estate is sold We took the best
                       </p>
                     </div>
-                  </a>
-                </div>
-                <div class="block">
-                  <ul>
-                    {% comment %}
-                    <li>
-                      <a role="button" href="javascript:void(0)" tabindex="13">
-                        <div class="pic">
-                          <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                          <img class="slide-img" src="{% static 'theme-4/images/exp-2.jpg' %}" alt="real estate sales">
-                        </div>
-                        <div class="content">
-                          <h2 aria-level="2">
-                            House
-                          </h2>
-                          <p>
-                            revolutionizing the way real estate is sold We took the best
-                          </p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a role="button" href="javascript:void(0)" tabindex="14">
-                        <div class="pic">
-                          <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                          <img class="slide-img" src="{% static 'theme-4/images/exp-3.jpg' %}" alt="real estate sales">
-                        </div>
-                        <div class="content">
-                          <h2 aria-level="2">
-                            Auction
-                          </h2>
-                          <p>
-                            revolutionizing the way real estate is sold We took the best
-                          </p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a role="button" href="javascript:void(0)" tabindex="15">
-                        <div class="pic">
-                          <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                          <img class="slide-img" src="{% static 'theme-4/images/exp-4.jpg' %}" alt="real estate sales">
-                        </div>
-                        <div class="content">
-                          <h2 aria-level="2">
-                            Land
-                          </h2>
-                          <p>
-                            revolutionizing the way real estate is sold. We took the best features from real estate
-                          </p>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a role="button" href="javascript:void(0)" tabindex="16">
-                        <div class="pic">
-                          <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                          <img class="slide-img" src="{% static 'theme-4/images/exp-5.jpg' %}" alt="real estate sales">
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a role="button" href="javascript:void(0)" tabindex="17">
-                        <div class="pic">
-                          <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                          <img class="slide-img" src="{% static 'theme-4/images/exp-6.jpg' %}" alt="real estate sales">
-                        </div>
-                        <div class="content">
-                          <h2 aria-level="2">
-                            Commercial
-                          </h2>
-                          <p>
-                            revolutionizing the way real estate is sold We took the best
-                          </p>
-                        </div>
-                      </a>
-                    </li>
-                    {% endcomment %}
-                    {% for expertise in expertise_name %}
-                      {% if forloop.counter == 4 %}
-                        <li>
-                          <a role="button" href="javascript:void(0)" tabindex="18">
-                            <div class="pic">
-                              <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                              <img class="slide-img" src="{% static 'theme-4/images/exp-5.jpg' %}" alt="real estate sales">
-                            </div>
-                          </a>
-                        </li>
-                      {% endif %}
-                      <li>
-                        <a role="button" href="javascript:void(0)" tabindex="19">
-                          <div class="pic">
-                            <img class="slide-fixed" src="{% static 'theme-4/images/trans.png' %}" alt="real estate sales">
-                            <img class="slide-img" src="{% static expertise.img_path %}" alt="real estate sales">
-                          </div>
-                          <div class="content">
-                            <h2 aria-level="2">
-                              {{expertise.expertise_name}}
-                            </h2>
-                            <p>
-                              {{expertise.text}}
-                            </p>
-                          </div>
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-  
-            </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="bg">
+                    <div class="pic">
+                      <img src="{% static 'theme-4/images/exp-3.jpg' %}" alt="real estate sales">
+                    </div>
+                    <div class="content">
+                      <h5 aria-level="2">
+                        Auction
+                      </h5>
+                      <p>
+                        revolutionizing the way real estate is sold We took the best
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="bg">
+                    <div class="pic">
+                      <img src="{% static 'theme-4/images/exp-4.jpg' %}" alt="real estate sales">
+                    </div>
+                    <div class="content">
+                      <h5 aria-level="2">
+                        Land
+                      </h5>
+                      <p>
+                        revolutionizing the way real estate is sold. We took the best features from real estate
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                
+                <li>
+                  <div class="bg">
+                    <div class="pic">
+                      <img src="{% static 'theme-4/images/exp-6.jpg' %}" alt="real estate sales">
+                    </div>
+                    <div class="content">
+                      <h5 aria-level="2">
+                        Commercial
+                      </h5>
+                      <p>
+                        revolutionizing the way real estate is sold We took the best
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                {% endcomment %}
+                {% for expertise in expertise_name %}
+                  {% if forloop.counter == 4 %}
+                    
+                  {% endif %}
+                  <li>
+                    <div class="bg">
+                      <div class="pic">
+                        <img src="{% static expertise.img_path %}" alt="real estate sales">
+                      </div>
+                      <div class="content">
+                        <h5 aria-level="2">
+                          {{expertise.expertise_name}}
+                        </h5>
+                        <p>
+                          {{expertise.text}}
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                {% endfor %}
+              </ul>
+                  
           </div>
         </div>
       </div><!-- End .experties-wrap -->
@@ -268,39 +237,35 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-lg-12">
-              <div class="item">
-                <div class="block">
-                  <h2 aria-level="2">
-                    Featured
-                    <span>
-                      Properties
-                    </span>
-                  </h2>
-                  <p>
-                    Is revolutionizing the way real estate is sold. We took the best features from
-                  </p>
-                  <div class="customNavigation">
-                    <div class="btns">
-                      <a role="button" href="/our-listing/" class="btn btn-primary" tabindex="20">View All Properties</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="block">
-                  <div class="featured-slider">
-                    {% for property in dashboard_data.featured_property %}
-                      {% now "U" as todays_date %}
-                      {% define_var property.start_date|parse_iso|date:"U" as start_date %}
-                      {% define_var property.end_date|parse_iso|date:"U" as end_date %}
-                      {% define_var property.end_date|remaining_hours|default:'' as remain_hr %}
-                      {% add_days property.added_on|parse_iso 15 as traditional_time %}
-                      {% define_var traditional_time|date:"U" as traditional_status_time %}
-                    <div class="itemm {% if property.sale_by_type_id == 4 %}auction-hide{% endif %}">
-                      <div role="button" aria-label="like button" tabindex="1" class="like_post {% if property.is_favourite %}active{% endif %}" {% if request.session.user_id %}onclick="dashboard_favourite_listing({{ property.id }}, this);"{% else %}onclick="location.href='{% url 'login' %}?next=/'"{% endif %}>
-                        <span class="icon star-icon" role="presentation">&nbsp;</span>
-                      </div><!-- End .like_post -->
-                      <a role="button" href="/asset-details/?property_id={{ property.id }}">
+              <h2 aria-level="2">
+                Featured
+                <span>
+                  Properties
+                </span>
+              </h2>
+              <p>
+                Is revolutionizing the way real estate is sold. We took the best features from
+              </p>
+              {% if dashboard_data.featured_property|length < 3 %}
+              <div class="featured-slider">
+              {% else %}
+              <div class="featured-slider featured-sliderr">
+              {% endif %}
+                {% for property in dashboard_data.featured_property %}
+                  {% now "U" as todays_date %}
+                  {% define_var property.start_date|parse_iso|date:"U" as start_date %}
+                  {% define_var property.end_date|parse_iso|date:"U" as end_date %}
+                  {% define_var property.end_date|remaining_hours|default:'' as remain_hr %}
+                  {% add_days property.added_on|parse_iso 15 as traditional_time %}
+                  {% define_var traditional_time|date:"U" as traditional_status_time %}
+                <div class="itemm {% if property.sale_by_type_id == 4 %}auction-hide{% endif %}">
+                  <div class="shadow">
+                    <div role="button" aria-label="like button" tabindex="1" class="like_post {% if property.is_favourite %}active{% endif %}" {% if request.session.user_id %}onclick="dashboard_favourite_listing({{ property.id }}, this);"{% else %}onclick="location.href='{% url 'login' %}?next=/'"{% endif %}>
+                      <span class="icon star-icon" role="presentation">&nbsp;</span>
+                    </div><!-- End .like_post -->
+                    <a role="button" href="/asset-details/?property_id={{ property.id }}">
                       <div class="pic" role="figure">
-                        <img class="slide-fixed" src="{% static 'theme-4/images/trans-feature.png' %}" alt="real estate sales">
+                        <img class="slide-fixed" src="{% static 'theme-4/images/transparent2.png' %}" alt="real estate sales">
                         {% if property.idx_property_image|length and property.idx_property_id %}
                           <img class="slide-img" src="{% if property.idx_property_image.upload %}{{property.idx_property_image.upload}}{% else %}{% static 'theme-4/images/default-img.png' %}{% endif %}" alt="real estate sales">
                         {% else %}
@@ -432,13 +397,17 @@
                         </ul><!-- End .tags -->
 
                       </div>
-                      </a>
-                    </div>
-                    
-                    {% endfor %}
+                    </a>
                   </div>
                 </div>
+                
+                {% endfor %}
               </div>
+
+              <div class="right pt20">
+                <a role="button" href="/our-listing/" class="btn btn-primary" tabindex="20">View All Properties</a>
+              </div>
+                
             </div>
           </div>
         </div>
@@ -598,7 +567,7 @@
                         Lorem Ipsum is simply dummy text of the printing and typeing industry Lorem Ipsum
                       </p>
                       <div class="more">
-                        <a role="button" href="/blog-details/?id={{ article.id }}">View More <i class="fa-light fa-circle-arrow-right" role="presentation"></i></a>
+                        <a role="button" href="/blog-details/?id={{ article.id }}" tabindex="22">View More <i class="fa-light fa-circle-arrow-right" role="presentation"></i></a>
                       </div>
                     </div>
                   </div>
@@ -646,7 +615,7 @@
                 <h3 aria-level="3">
                   Why wait? Register today!
                 </h3>
-                <form action="">
+                <form action="" role="form">
                   <input type="text" class="form-control" placeholder="Your email address" role="textbox" aria-label="Email Address">
                   <button role="button" class="btn btn-primary" aria-label="Signup">Signup</button>
                 </form>
@@ -676,7 +645,7 @@
         adaptiveHeight:true,
       });
 
-      $(".real-slider").slick({
+      $(".real-sliderrr").slick({
         dots: false,
         infinite: true,
         slidesToShow: 4,
@@ -708,7 +677,7 @@
         ]
       });
 
-      $(".featured-slider").slick({
+      $(".featured-sliderr").slick({
         dots: false,
         infinite: true,
         slidesToShow: 3,

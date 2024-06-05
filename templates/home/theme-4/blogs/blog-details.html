@@ -62,14 +62,14 @@
                       </ul>
                     </div>
                     <div class="item">
-                      <a href="#"><span class="share-icon"></span> Share</a>
+                      <a role="button" href="javascript:void(0)"><span class="share-icon"></span> Share</a>
                     </div>
                   </div>
                   {% autoescape off %}
                     {{ blog.description|default:'' }}
                   {% endautoescape %}
                   <div class="back-btn">
-                    <a href="/blogs/" class="red-text"><i class="fas fa-angle-left"></i> Back to Blogs</a>
+                    <a role="button" href="/blogs/" class="red-text"><i class="fas fa-angle-left" role="presentation"></i> Back to Blogs</a>
                   </div>
                 </div>
 
@@ -85,7 +85,7 @@
                       <h4>
                         Listings
                       </h4>
-                      <a href="/our-listing" class="btn btn-secondary">Search</a>
+                      <a role="button" tabindex="4" href="/our-listing" class="btn btn-secondary">Search</a>
                     </div>
                   </li>
                   <li>
@@ -96,7 +96,7 @@
                       <h4>
                         Value Estimator
                       </h4>
-                      <a href="/property-value-estimator/" class="btn btn-secondary">Get Started</a>
+                      <a role="button" tabindex="5" href="/property-value-estimator/" class="btn btn-secondary">Get Started</a>
                     </div>
                   </li>
                   <li>
@@ -107,7 +107,7 @@
                       <h4>
                         Types
                       </h4>
-                      <a href="/auction-type/" class="btn btn-secondary">Learn More</a>
+                      <a role="button" tabindex="6" href="/auction-type/" class="btn btn-secondary">Learn More</a>
                     </div>
                   </li>
                   <li>
@@ -118,7 +118,7 @@
                       <h4>
                         Listing Alerts
                       </h4>
-                      <a href="{% url 'register' %}" class="btn btn-secondary">Sign Up</a>
+                      <a role="button" tabindex="7" href="{% url 'register' %}" class="btn btn-secondary">Sign Up</a>
                     </div>
                   </li>
                 </ul>
@@ -151,9 +151,9 @@
 <script type="text/javascript" src="{% static 'theme-common/js/blogs.js' %}?v=1.1"></script>
 <script type="text/javascript" src="{% static 'theme-common/js/common.js' %}?v=1.1"></script>
 <script type="text/javascript" src="{% static 'theme-common/js/pagination.js' %}?v=1.1"></script>
-<script>
+<!-- <script>
 $(document).ready(function(){
   $('.select').chosen();
 });
-</script>
+</script> -->
 {% endblock %}
